@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+.bg-light{
+  background-color: #197690f5!important;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+nav > div > ul > li > a {
+  font-size: 15px;
+}
+
+.search-btn{
+  color: #08090a;
+  border-color: #0e130f;
+}
+
+.curtion{
+  min-width: 500px;
+  padding: 10px;
+  display: block !important;
+}
+
+.curtion > div > div {
+  padding-top: 10px;
+}
+
+.nav-drop-list{
+  display: none !important;
+}
+
+.curtion > div > div > h6{
+  font-size: 13px;
+}
+
+.curtion > div > div > ul{
+  list-style: none !important;
+  padding-left:10px;
+}
+
+.curtion > div > div > ul > li > a{
+  font-size: 11px;
+  text-decoration: none;
+  color: #777;
+}
+
+@media(max-width:600px){
+  .curtion{
+    display: none !important;
+  }
+  .nav-drop-list{
+    display: block !important;
+  }
+}
+
