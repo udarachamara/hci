@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     AppComponent,
     ComponentsComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
