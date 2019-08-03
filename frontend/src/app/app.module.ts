@@ -9,12 +9,13 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsComponent } from './components/components.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductGridComponent } from './components/product-grid/product-grid.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -30,12 +31,13 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentsComponent,
-    NavBarComponent,
     HomeComponent,
+    ProductGridComponent,
     AboutUsComponent,
     ContactUsComponent,
-    FooterComponent
+    NavBarComponent,
+    FooterComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
