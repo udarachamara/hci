@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 
 @Injectable({providedIn: 'root'})
@@ -31,6 +33,8 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     ComponentsComponent,
     NavBarComponent,
     HomeComponent,
+    AboutUsComponent,
+    ContactUsComponent,
     FooterComponent
   ],
   imports: [
