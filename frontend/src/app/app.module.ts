@@ -16,6 +16,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductsComponent } from './components/products/products.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -37,7 +39,9 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     ContactUsComponent,
     NavBarComponent,
     FooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
