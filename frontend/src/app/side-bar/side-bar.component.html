@@ -1,19 +1,30 @@
 <div class="side-bar">
     <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn search-btn my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search items here..." aria-label="Search">
+        <button class="btn search-btn my-2" type="button"><i class="fa fa-search"></i></button>
       </form>
 
       <div data-role="main" class="ui-content">
           <form method="post" action="/action_page_post.php">
             <div data-role="rangeslider">
-              <label for="price-min">Price:</label>
+              <label for="price-min">Min:</label>
               <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
-              <label for="price-max">Price:</label>
+              <br>
+              <label for="price-max">Max:</label>
               <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
             </div>
-              <input type="submit" data-inline="true" value="Submit">
-              <p>The range slider can be useful for allowing users to select a specific price range when browsing products.</p>
+              <input type="button" data-inline="true" value="Filter">
             </form>
+        </div>
+
+        <div class="mt-5">
+          <div>
+            <h6>Top Category</h6>
+          </div>
+          <ul>
+            <a href="#">
+
+            </a>
+          </ul>
         </div>
 </div>
