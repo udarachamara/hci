@@ -5,6 +5,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -31,7 +33,16 @@ const routes: Routes = [
   {
     path: 'products-category/:cat',
     component: ProductsComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
+  },
+  {
+    path: 'cart/payment',
+    component: PaymentComponent
   }
+
 ];
 
 @NgModule({
