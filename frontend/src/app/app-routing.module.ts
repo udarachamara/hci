@@ -7,6 +7,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     component: ProductDetailComponent
   },
   {
+    path: 'products-detail/:id',
+    component: ProductDetailComponent
+  },
+  {
     path: 'products-category/electronic/product-details/:id',
     component: ProductDetailComponent
   },
@@ -37,6 +42,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent
   },
   {
     path: 'cart/payment',

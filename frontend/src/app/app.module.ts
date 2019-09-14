@@ -20,6 +20,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -45,7 +46,8 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     ProductsComponent,
     SideBarComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
