@@ -15,22 +15,22 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
     this.category = [{
       CatgoryId: 1,
-      CatgoryName: 'Test',
+      CatgoryName: 'Electronic Items',
       SubCategory: [{
         SubCatgoryId: '1',
-        SubCatgoryName: 'SubTest1'
+        SubCatgoryName: 'Electronic Item 1'
         },
         {
         SubCatgoryId: '2',
-        SubCatgoryName: 'SubTest2'
+        SubCatgoryName: 'Electronic Item 2'
         },
         {
         SubCatgoryId: '3',
-        SubCatgoryName: 'SubTest3'
+        SubCatgoryName: 'Electronic Item 3'
         },
         {
         SubCatgoryId: '4',
-        SubCatgoryName: 'SubTest4'
+        SubCatgoryName: 'Electronic Item 4'
         }
       ],
       IsDelete: 0,
@@ -38,22 +38,22 @@ export class NavBarComponent implements OnInit {
     },
     {
       CatgoryId: 2,
-      CatgoryName: 'Test2',
+      CatgoryName: 'Sports',
       SubCategory: [{
         SubCatgoryId: '1',
-        SubCatgoryName: 'SubTest1'
+        SubCatgoryName: 'Sports Item 1'
         },
         {
         SubCatgoryId: '2',
-        SubCatgoryName: 'SubTest2'
+        SubCatgoryName: 'Sports Item 2'
         },
         {
         SubCatgoryId: '3',
-        SubCatgoryName: 'SubTest3'
+        SubCatgoryName: 'Sports Item 3'
         },
         {
         SubCatgoryId: '4',
-        SubCatgoryName: 'SubTest4'
+        SubCatgoryName: 'Sports Item 4'
         }
       ],
       IsDelete: 0,
@@ -61,22 +61,22 @@ export class NavBarComponent implements OnInit {
     },
     {
       CatgoryId: 3,
-      CatgoryName: 'Test3',
+      CatgoryName: 'Toys',
       SubCategory: [{
         SubCatgoryId: '1',
-        SubCatgoryName: 'SubTest1'
+        SubCatgoryName: 'Toy 1'
         },
         {
         SubCatgoryId: '2',
-        SubCatgoryName: 'SubTest2'
+        SubCatgoryName: 'Toy 2'
         },
         {
         SubCatgoryId: '3',
-        SubCatgoryName: 'SubTest3'
+        SubCatgoryName: 'Toy 3'
         },
         {
         SubCatgoryId: '4',
-        SubCatgoryName: 'SubTest4'
+        SubCatgoryName: 'Toy 4'
         }
       ],
       IsDelete: 0,
@@ -84,22 +84,22 @@ export class NavBarComponent implements OnInit {
     },
     {
       CatgoryId: 4,
-      CatgoryName: 'Test4',
+      CatgoryName: 'Vehicles',
       SubCategory: [{
         SubCatgoryId: '1',
-        SubCatgoryName: 'SubTest1'
+        SubCatgoryName: 'Vehicle 1'
         },
         {
         SubCatgoryId: '2',
-        SubCatgoryName: 'SubTest2'
+        SubCatgoryName: 'Vehicle 2'
         },
         {
         SubCatgoryId: '3',
-        SubCatgoryName: 'SubTest3'
+        SubCatgoryName: 'Vehicle 3'
         },
         {
         SubCatgoryId: '4',
-        SubCatgoryName: 'SubTest4'
+        SubCatgoryName: 'Vehicle 4'
         }
       ],
       IsDelete: 0,
