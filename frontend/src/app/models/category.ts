@@ -1,7 +1,8 @@
 interface Category {
-  CatgoryId: number;
-  CatgoryName: string;
-  SubCategory: any;
-  IsDelete: number;
+  Id: number;
+  Name: string;
   Status: number;
+  Image: string;
+  CreateAt: string;
+  ModifiedAt: string;
 }

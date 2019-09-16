@@ -2,18 +2,19 @@
     <section class="topCategories">
         <h3 class="h3">Top Category</h3>
         <div class="row mb-4">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" *ngFor="let topCategory of TopCategory">
                 <div class="product-grid2">
                     <div class="product-image2">
                         <a routerLink="products-category/electronic">
-                            <img class="pic-1" src="../../../assets/images/products/electric items/electri.jpg">
-                            <img class="pic-2" src="../../../assets/images/products/electric items/electri.jpg">
+                            <img class="pic-1" src="{{ topCategory.Image }}">
+                            <img class="pic-2" src="{{ topCategory.Image }}">
                         </a>
-                        <a class="add-to-cart" routerLink="products-category/electronic">Electronic Items</a>
+                        <a class="add-to-cart" routerLink="products-category/electronic">{{ topCategory.Name }}</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+
+            <!-- <div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
                         <a routerLink="products-category/sport">
@@ -45,7 +46,7 @@
                         <a class="add-to-cart" routerLink="products-category/garden">Vehicles</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <section class="latestProducts">

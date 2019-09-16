@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="productForm" tabindex="-1" role="dialog" aria-labelledby="modal_title" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="categoryForm" tabindex="-1" role="dialog" aria-labelledby="modal_title" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -19,9 +19,40 @@
           </header> -->
           <article class="card-body">
           <form id="party_form">
-            <input type="hidden" id="product_id" value="0">
+            <input type="hidden" id="category_id" value="0">
 						<input type="hidden" id="isEdit" value="">
-                                  
+
+						<div class="row">
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Category Name</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="cat_name">
+								</div>
+							</div>
+							</div>
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Status</label>
+									<div class="col-sm-8">
+									<select class="form-control" id="cat_status">
+										<option value="active">Active</option>
+										<option value="deactive">Deactive</option>
+									</select>
+								</div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Image</label>
+								<div class="col-sm-8">
+									<input type="file" class="form-control" id="image">
+								</div>
+							</div>
+							</div>
+						</div>
+                  
           </form>
           </article> <!-- card-body end .// -->
           </div> <!-- card.// -->

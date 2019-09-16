@@ -1,6 +1,5 @@
 
 
-
 <div class="container" style="text-align: right;">
     <button class="btn btn-primary" onclick="openForm(false)">Add New</button>
     <div style="height: 20px;"></div>
@@ -28,7 +27,7 @@
                         <td><?php echo $data['STATUS']; ?></td>
                         <td>
 							<div>
-								<img src="" width="100" />
+								<img src="<?php echo base_url('').$data['IMG'] ?>" width="100" />
 							</div>
 						</td>
                         <td>

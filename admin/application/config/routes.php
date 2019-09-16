@@ -58,6 +58,14 @@ $route['log-out'] = 'login/log_out';
 $route['authentication'] = 'login/authentication';
 $route['dashboard'] = 'route/dashboard';
 $route['product-all'] = 'route/product_all';
+$route['category-all'] = 'route/category_all';
+
+$route['insert-new-category'] = 'category/insert_new_category';
+
+
+// API ROUTES
+$route['get-top-category'] = 'api/get_top_category';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

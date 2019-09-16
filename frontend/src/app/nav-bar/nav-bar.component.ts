@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavBarComponent implements OnInit {
 
-  public category: Category[];
+  public category: any[];
 
   constructor(
     private translate: TranslateService,
