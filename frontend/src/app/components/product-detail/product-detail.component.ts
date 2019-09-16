@@ -12,6 +12,23 @@ public id : number;
 public id1;
 public id2;
 
+  public products = [
+    {
+      id: 1,
+      title: 'Electric Toy Car',
+      description: 'New Toy Car',
+      price: '$123.50',
+      image: [
+        {
+          path: 'prod4/prod4-1.jpg'
+        },
+        {
+          path: 'prod17/prod17-1.jpg'
+        }
+      ]
+    }
+];
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -30,8 +47,10 @@ public id2;
          this.id1 = '7';
          this.id2 = '8';
        }
-       
     });
+
+
+
   }
 
 }

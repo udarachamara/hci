@@ -10,7 +10,7 @@
         <a class="nav-link" routerLinkActive="active" routerLink="">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/about-us">About Us</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="">About Us</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,15 +38,21 @@
           </div>
         </div>
       </li>
-      <li class="nav-item" >
+      <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/contact-us">Contact Us</a>
-       
       </li>
-    </ul>
-    <ul>
-      
-      <a class="nav-link"  routerLinkActive="active" routerLink="/cart">Cart</a>
-      
+      <li style="min-width: 450px;"></li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user user-icon"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/my-profile">Profile</a>
+            <a class="dropdown-item" routerLink="cart">My Cart</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Setting</a>
+          </div>
+        </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
