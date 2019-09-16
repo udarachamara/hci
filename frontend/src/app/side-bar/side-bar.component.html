@@ -1,39 +1,33 @@
 <div class="side-bar">
     <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search items here..." aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" style="font-size: 12px;width:80%" placeholder="Search items by name here..." aria-label="Search">
         <button class="btn search-btn my-2" type="button"><i class="fa fa-search"></i></button>
       </form>
-
+<hr>
       <div data-role="main" class="ui-content">
-          <form method="post" action="/action_page_post.php">
-            <div data-role="rangeslider">
-              <label for="price-min">Min:</label>
-              <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
-              <br>
-              <label for="price-max">Max:</label>
-              <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+          <form method="post" action="">
+            <label class="user-label">Price</label>
+            <div class="row">
+              <div class="col-sm-6">
+                  <label for="price-min">Min:</label>
+                  <input type="number" class="form-control user-control" name="price-min" id="price-min" value="0">
+              </div>
+              <div class="col-sm-6">
+                  <label for="price-max">Max:</label>
+                  <input type="number" class="form-control user-control" name="price-max" id="price-max" value="50">
+              </div>
+              <div class="col-sm-12">
+                  <small>* add minimum price maximum price values to filter items by price</small>
+              </div>
+
             </div>
+            <br>
               <input type="button" data-inline="true" value="Filter">
             </form>
         </div>
 
-        <div class="mt-5 side-category">
-          <div class="side-heading">
-            <h6>Top Category</h6>
-          </div>
-          <ul>
-            <a href="#">
-              <li>Electronics</li>
-            </a>
-            <a href="#">
-                <li>Toys</li>
-            </a>
-              <a href="#">
-                  <li>Sports</li>
-              </a>
-              <a href="#">
-                  <li>Vehicles</li>
-              </a>
-          </ul>
-        </div>
+      <hr>
+
+        <app-menu-group-tree></app-menu-group-tree>
+
 </div>

@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLinkActive="active" routerLink="">Home</a>
+        <a class="nav-link" (mouseenter)="readLinkDescription('Home')" routerLinkActive="active" routerLink="">{{ 'HOME' | translate }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="">About Us</a>
+        <a class="nav-link" (mouseenter)="readLinkDescription('About Us')" routerLinkActive="active" routerLink="">About Us</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +41,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/contact-us">Contact Us</a>
       </li>
-      <li style="min-width: 450px;"></li>
+      <li style="min-width: 400px;"></li>
+      <li class="nav-item">
+        <select #lan (change)="changeLanguage(lan.value)">
+          <option value="en">EN</option>
+          <option value="si">SI</option>
+          <option value="ta">TA</option>
+        </select>
+      </li>
+      <li class="nav-item">
+          <button type="button" class="btn-clear" autofocus (click)="enableTextSpeach()"><i class="fa fa-wheelchair-alt"></i></button>
+      </li>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user user-icon"></i>
