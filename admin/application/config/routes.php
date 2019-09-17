@@ -61,6 +61,7 @@ $route['product-all'] = 'route/product_all';
 $route['category-all'] = 'route/category_all';
 
 $route['insert-new-category'] = 'category/insert_new_category';
+$route['insert-new-product'] = 'category/insert_new_product';
 
 
 // API ROUTES

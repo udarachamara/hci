@@ -8,28 +8,34 @@ class Category_Model extends CI_Model{
 		parent::__construct();
     	}
 
-    function get_all_categories(){
-        $this->db->select('*');
-        $this->db->from('categories');
-        // $this->db->join('subcategories' , 'subcategories.ID=items.SUBCATEGORY');
-        $this->db->where('categories.STATUS','active');
-        return $this->db->get()->result_array();
+    	function get_all_categories(){
+		$this->db->select('*');
+		$this->db->from('categories');
+		$this->db->where('STATUS','active');
+		return $this->db->get()->result_array();
+	}
+
+	function get_all_subcategories(){
+		$this->db->select('*');
+		$this->db->from('subcategories');
+		$this->db->where('STATUS','active');
+		return $this->db->get()->result_array();
 	}
 	
 	function get_category_by($id){
-        $this->db->select('*');
-        $this->db->from('categories');
-        $this->db->where('ID',$id);
-        $this->db->where('STATUS','active');
-        return $this->db->get()->result_array();
+		$this->db->select('*');
+		$this->db->from('categories');
+		$this->db->where('ID',$id);
+		$this->db->where('STATUS','active');
+		return $this->db->get()->result_array();
 	}
 	
 	function get_subcategory_by_Category($id){
-        $this->db->select('*');
-        $this->db->from('items');
-        $this->db->where('SUBCATEGORY',$id);
-        $this->db->where('STATUS','active');
-        return $this->db->get()->result_array();
+		$this->db->select('*');
+		$this->db->from('items');
+		$this->db->where('SUBCATEGORY',$id);
+		$this->db->where('STATUS','active');
+		return $this->db->get()->result_array();
 	}
 	
 	function insert_category($category){
@@ -37,7 +43,7 @@ class Category_Model extends CI_Model{
 	}
 	
 	function update_category($category , $id){
-        $this->db->where('ID',$id);
+        	$this->db->where('ID',$id);
 	  return $this->db->update('categories',$category);
 	}
 }

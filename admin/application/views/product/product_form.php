@@ -21,6 +21,78 @@
           <form id="party_form">
             <input type="hidden" id="product_id" value="0">
 						<input type="hidden" id="isEdit" value="">
+
+						<div class="row">
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Product Name</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="product_name">
+								</div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Price</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="price">
+								</div>
+							</div>
+							</div>
+
+							<div class="col-md-9">
+							<div class="form-group">
+								<label class="col-sm-6">Description</label>
+								<div class="col-sm-8">
+								<textarea rows="4" cols="50" id="description"></textarea>
+								</div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								 <label class="col-sm-6">Category</label>
+									<div class="col-sm-8">
+									<select class="form-control" id="product_category">
+										<option value="active">Active</option>
+									</select>
+								  </div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								 <label class="col-sm-6">Subcategory</label>
+									<div class="col-sm-8">
+									<select class="form-control" id="product_subcategory">
+										<option value="active">Active</option>
+									</select>
+								  </div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								 <label class="col-sm-6">Status</label>
+									<div class="col-sm-8">
+									<select class="form-control" id="product_status">
+										<option value="active">Active</option>
+										<option value="deactive">Deactive</option>
+									</select>
+								  </div>
+							</div>
+							</div>
+
+							<div class="col-md-6">
+							<div class="form-group">
+								<label class="col-sm-6">Image</label>
+								<div class="col-sm-8">
+									<input type="file" class="form-control" id="image">
+								</div>
+							</div>
+							</div>
+						</div>
                                   
           </form>
           </article> <!-- card-body end .// -->
