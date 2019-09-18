@@ -33,7 +33,7 @@ class Product_Model extends CI_Model{
 	}
 	
 	function insert_item($item){
-		return $this->db->insert('items',$item);
+	   return $this->db->insert('items',$item);
 	}
 	
 	function update_items($item , $id){

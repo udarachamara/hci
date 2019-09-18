@@ -1,12 +1,3 @@
 {
-  "MESSAGE": {
-      "ERROR_MESSAGE": "Error Occured",
-      "ERROR_TITLE": "Error",
-      "INFO_MESSAGE": "Information message",
-      "INFO_TITLE": "Info",
-      "SUCCESS_MESSAGE": "Successfully submitted",
-      "WARN_MESSAGE": "Smething is wrong",
-      "WARN_TITLE": "Warning",
-      "SUCCESS_TITLE": "Successfull"
-  }
+  "HOME":"வீட்டில்"
 }

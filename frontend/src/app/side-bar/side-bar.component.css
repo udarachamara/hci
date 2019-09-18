@@ -6,22 +6,3 @@
   height: 100vh;
 }
 
-.side-category > .side-heading{
-  font-size: 15px;
-  color: #777;
-  font-weight: bold;
-}
-
-.side-category > ul > a{
-  text-decoration: none;
-  color: black;
-}
-
-.side-category > ul > a > li{
-  list-style: none;
-}
-
-.side-category > ul > a > li:hover{
-  color: burlywood;
-  padding-left: 5px;
-}

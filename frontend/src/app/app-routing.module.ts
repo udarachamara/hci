@@ -32,12 +32,17 @@ const routes: Routes = [
     component: ProductDetailComponent
   },
   {
-    path: 'products-category/electronic/product-details/:id',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'products-category/:cat',
-    component: ProductsComponent
+    path: 'products-category/:category',
+    children: [
+      {
+        path: '',
+        component: ProductsComponent
+      },
+      {
+        path: 'product-details/:id',
+        component: ProductDetailComponent
+      }
+    ]
   },
   {
     path: 'cart',

@@ -19,7 +19,7 @@ if(!$this->session->userdata('login_user')){
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Product</title>
+  <title>Party </title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('public/plugins/admin-assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +42,7 @@ if(!$this->session->userdata('login_user')){
     }
   </style>
 
-  <?php $this->load->view('product/product_form'); ?>
+  <?php $this->load->view('category/category_form'); ?>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -65,7 +65,7 @@ if(!$this->session->userdata('login_user')){
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <?php 
-                $this->load->view('product/product_grid',$grid_data);
+                $this->load->view('category/category_grid',$grid_data);
             ?>
 
         </div>
@@ -115,7 +115,49 @@ if(!$this->session->userdata('login_user')){
 	} );
 
 	function openForm(isEdit){
-		$('#productForm').modal();
+		$('#categoryForm').modal();
+	}
+
+	function validateForm(){
+		var category_name = $('#cat_name').val();
+		var status = $('#cat_status').val();
+		try{
+			var image = $('#image')[0].files[0];
+		}catch(e){
+			var image = '';
+		}
+		
+
+		var formdata = new FormData();
+		formdata.append('NAME',category_name);
+		formdata.append('STATUS',status);
+		formdata.append('IMG',image);
+
+		if(category_name == ''){
+			return false;
+		}else{
+			$.ajax({
+				url:'insert-new-category',
+				type:'post',
+				dataType:'json',
+				contentType: false,
+    		processData: false,
+				data:formdata,
+				success:function(response){
+					console.log(response);
+					if(response.code==1000){
+						showSuccessMsg("Data Insert Success...!");
+						//$('#party_form').reset();
+					}else{
+						showErrorMsg("Data Insert Faield..!");
+					}
+				},
+				error:function(error){
+					showErrorMsg("Data Insert Faield..!");
+					console.log(error.responseText);
+				}
+			});
+		}
 	}
 </script>
 
