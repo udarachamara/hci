@@ -5,173 +5,38 @@
         <hr class="style-one">
         <div class="product-container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+
+                <div class="col-md-12 col-sm-12 text-center py-4" *ngIf="Products.length <= 0">
+                  <h4>No Items Here..</h4>
+                </div>
+
+                <div class="col-md-3 col-sm-6" *ngFor="let product of Products">
                     <div class="product-grid2">
                         <div class="product-image2">
-                            <a routerLink="product-details/1">
-                                <img class="pic-1" src="../../../assets/images/products/prod2/prod2-1.jpg">
-                                <img class="pic-2" src="../../../assets/images/products/prod2/prod2-1.jpg">
+                            <a routerLink="product-details/{{ product.Id }}">
+                                <img class="pic-1" src="{{ product.Image }}">
+                                <img class="pic-2" src="{{ product.Image }}">
                             </a>
                             <ul class="social">
-                                <li><a routerLink="product-details/1" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                <li><a routerLink="product-details/{{ product.Id }}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                 <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
                                 <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a routerLink="product-details/1">Toy car MLx-12Y</a></h3>
-                            <span class="price">$599.99</span>
+                            <h3 class="title"><a routerLink="product-details/{{ product.Id }}">{{ product.Name }}</a></h3>
+                            <span class="price">${{ product.Price }}</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                      <div class="product-image2">
-                          <a href="#">
-                              <img class="pic-1" src="../../../assets/images/products/prod3/prod3-1.jpg">
-                              <img class="pic-2" src="../../../assets/images/products/prod3/prod3-1.jpg">
-                          </a>
-                          <ul class="social">
-                              <li><a routerLink="product-details/2" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                              <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                              <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                          </ul>
-                          <!-- <a class="add-to-cart" href="">Sports</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Toy car red</a></h3>
-                            <span class="price">$699.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                        <div class="product-image2">
-                            <a href="#">
-                                <img class="pic-1" src="../../../assets/images/products/prod22/prod22-1.jpg">
-                                <img class="pic-2" src="../../../assets/images/products/prod22/prod22-1.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a routerLink="product-details/3" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <!-- <a class="add-to-cart" href="">Toys</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Car Green Box-34SD</a></h3>
-                            <span class="price">$599.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                        <div class="product-image2">
-                            <a routerLink="products-category/garden>">
-                              <img class="pic-1" src="../../../assets/images/products/prod3/prod3-1.jpg">
-                              <img class="pic-2" src="../../../assets/images/products/prod3/prod3-1.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a routerLink="product-details/4" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <!-- <a class="add-to-cart" routerLink="products-category/garden>">Garden</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Toy XCVD 9D34</a></h3>
-                            <span class="price">$599.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                        <div class="product-image2">
-                            <a href="#">
-                                <img class="pic-1" src="../../../assets/images/products/prod22/prod22-1.jpg">
-                              <img class="pic-2" src="../../../assets/images/products/prod22/prod22-1.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a routerLink="product-details/1" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <!-- <a class="add-to-cart" href="">Electronic</!-->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Car Green Box-34SD</a></h3>
-                            <span class="price">$599.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                      <div class="product-image2">
-                          <a href="#">
-                              <img class="pic-1" src="../../../assets/images/products/prod7/prod7-1.jpeg">
-                              <img class="pic-2" src="../../../assets/images/products/prod7/prod7-1.jpeg">
-                          </a>
-                          <ul class="social">
-                              <li><a routerLink="product-details/2" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                              <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                              <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                          </ul>
-                          <!-- <a class="add-to-cart" href="">Sports</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Toy car 56FFD</a></h3>
-                            <span class="price">$699.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                        <div class="product-image2">
-                            <a href="#">
-                              <img class="pic-1" src="../../../assets/images/products/prod10/prod10-1.jpg">
-                              <img class="pic-2" src="../../../assets/images/products/prod10/prod10-1.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a routerLink="product-details/3" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <!-- <a class="add-to-cart" href="">Toys</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">BLL-XS</a></h3>
-                            <span class="price">$450.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid2">
-                        <div class="product-image2">
-                            <a routerLink="products-category/garden>">
-                              <img class="pic-1" src="../../../assets/images/products/prod6/prod6-1.jpg">
-                              <img class="pic-2" src="../../../assets/images/products/prod6/prod6-1.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a routerLink="product-details/4" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <!-- <a class="add-to-cart" routerLink="products-category/garden>">Garden</a> -->
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">CVFD 345</a></h3>
-                            <span class="price">$495.00</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
     </div>
 
     <div class="col-md-3">
-        <app-side-bar></app-side-bar>
+        <app-side-bar (search)="onSearch($event)" ></app-side-bar>
     </div>
 </div>
 
