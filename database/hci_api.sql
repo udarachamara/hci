@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2019 at 05:34 AM
+-- Generation Time: Sep 18, 2019 at 02:43 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.1.26
 
@@ -71,10 +71,20 @@ CREATE TABLE `cart` (
 CREATE TABLE `categories` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(250) NOT NULL,
+  `IMG` varchar(255) DEFAULT NULL,
   `STATUS` varchar(10) NOT NULL DEFAULT 'active',
   `CREATE_AT` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `MODIFIED_AT` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `MODIFIED_AT` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `RANK` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`ID`, `NAME`, `IMG`, `STATUS`, `CREATE_AT`, `MODIFIED_AT`, `RANK`) VALUES
+(2, 'Electronics', 'public/images/category_logo/2019_09_16_03_09_34_images.jpg', 'active', '2019-09-16 18:40:34', '2019-09-16 18:56:09', 1),
+(3, 'Sports', 'public/images/category_logo/2019_09_16_03_09_30_download.jpg', 'active', '2019-09-16 18:48:30', '2019-09-16 18:56:12', 1);
 
 -- --------------------------------------------------------
 
@@ -100,6 +110,7 @@ CREATE TABLE `gateway` (
 CREATE TABLE `items` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(250) NOT NULL,
+  `IMG` varchar(255) DEFAULT NULL,
   `SUBCATEGORY` int(11) DEFAULT NULL,
   `PRICE` decimal(10,2) DEFAULT NULL,
   `STATUS` varchar(10) NOT NULL DEFAULT 'active',
@@ -169,6 +180,13 @@ CREATE TABLE `users` (
   `STATUS` varchar(10) NOT NULL DEFAULT 'active',
   `USER_LEVEL` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`ID`, `FNAME`, `LNAME`, `EMAIL`, `PASSWORD`, `STATUS`, `USER_LEVEL`) VALUES
+(1, 'udara', 'chamara', 'udara9465@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'active', 1);
 
 --
 -- Indexes for dumped tables
@@ -248,7 +266,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gateway`
@@ -284,7 +302,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
