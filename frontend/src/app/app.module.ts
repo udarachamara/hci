@@ -21,6 +21,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { MenuGroupTreeComponent } from './sections/menu-group-tree/menu-group-tree.component';
+import { TextSpeechService } from './services/text-speech.service';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -47,7 +49,8 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     SideBarComponent,
     CartComponent,
     PaymentComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    MenuGroupTreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     ),
   ],
   providers: [
+    TextSpeechService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,

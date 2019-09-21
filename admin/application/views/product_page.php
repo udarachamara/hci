@@ -19,7 +19,7 @@ if(!$this->session->userdata('login_user')){
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Party </title>
+  <title>Product</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('public/plugins/admin-assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

@@ -58,6 +58,19 @@ $route['log-out'] = 'login/log_out';
 $route['authentication'] = 'login/authentication';
 $route['dashboard'] = 'route/dashboard';
 $route['product-all'] = 'route/product_all';
+$route['category-all'] = 'route/category_all';
+
+$route['insert-new-category'] = 'category/insert_new_category';
+$route['insert-new-product'] = 'category/insert_new_product';
+
+
+// API ROUTES
+$route['get-top-category'] = 'api/get_top_category';
+$route['get-active-products'] = 'api/get_active_products';
+$route['get-active-products-by-category'] = 'api/get_active_products_by_category';
+$route['get-active-products-by-search'] = 'api/get_active_products_by_search';
+$route['get-active-product-by-id'] = 'api/get_active_product_by_id';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

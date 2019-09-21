@@ -11,7 +11,6 @@
             <tr>
                 <th>#</th>
                 <th>NAME</th>
-                <th>SUB</th>
                 <th>STATUS</th>
                 <th>IMG</th>
                 <th></th>
@@ -26,11 +25,10 @@
                     <tr>
                         <td><?php echo $i; ?></td>
                         <td><?php echo $data['NAME']; ?></td>
-                        <td><?php echo $data['SUBCATEGORY']; ?></td>
                         <td><?php echo $data['STATUS']; ?></td>
                         <td>
 							<div>
-								<img src="" width="100" />>
+								<img src="" width="100" />
 							</div>
 						</td>
                         <td>

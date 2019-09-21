@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-grid',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductGridComponent implements OnInit {
 
-  constructor() { }
+  public TopCategory: Category[] = [];
+
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.categoryService.getTopCategoryList().subscribe(res => {
+      res.forEach(element => {
+        let el: Category = {
+          Id: element.Id,
+          Name: element.Name,
+          Image: environment.BASE_URL + '/' + element.Image,
+          Status: element.Status,
+          CreateAt: element.CreateAt,
+          ModifiedAt: element.ModifiedAt
+        };
+        this.TopCategory.push(el);
+      });
+
+      console.log(this.TopCategory);
+    });
   }
 
 }
