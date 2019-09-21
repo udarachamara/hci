@@ -1,33 +1,38 @@
 <div class="side-bar">
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" #searchInput type="search" style="font-size: 12px;width:78%" placeholder="Search items by name here..." aria-label="Search">
-        <button class="btn search-btn my-2" (click)="searchItems(searchInput.value)" type="button"><i class="fa fa-search"></i></button>
-      </form>
-<hr>
-      <div data-role="main" class="ui-content">
-          <form method="post" action="">
-            <label class="user-label">Price</label>
-            <div class="row">
-              <div class="col-sm-6">
-                  <label for="price-min">Min:</label>
-                  <input type="number" class="form-control user-control" name="price-min" id="price-min" value="0">
-              </div>
-              <div class="col-sm-6">
-                  <label for="price-max">Max:</label>
-                  <input type="number" class="form-control user-control" name="price-max" id="price-max" value="50">
-              </div>
-              <div class="col-sm-12">
-                  <small>* add minimum price maximum price values to filter items by price</small>
-              </div>
+  <form [formGroup]="searchForm" class="my-2 my-lg-0">
+    <div class="row">
+      <div class="col-sm-12 d-flex">
+          <input formControlName="name" class="form-control mr-sm-2" (keyup)="searchItems(searchInput.value)" #searchInput type="text"
+          style="font-size: 12px;width:78%" placeholder="Search items by name here..." aria-label="Search">
+        <button class="btn search-btn" (click)="searchItems(searchInput.value)" type="button"><i
+            class="fa fa-search"></i></button>
+      </div>
 
-            </div>
-            <br>
-              <input type="button" data-inline="true" value="Filter">
-            </form>
+    </div>
+
+  <hr>
+  <div data-role="main" class="ui-content">
+      <label class="user-label">Price</label>
+      <div class="row">
+        <div class="col-sm-5">
+          <label for="price-min">Min:</label>
+          <input formControlName="priceFrom" type="number" class="form-control user-control">
+        </div>
+        <div class="col-sm-5">
+          <label for="price-max">Max:</label>
+          <input formControlName="priceTo" type="number" class="form-control user-control">
+        </div>
+        <div class="col-sm-12">
+          <small>* add minimum price maximum price values to filter items by price</small>
         </div>
 
-      <hr>
+      </div>
+      <br>
+      <input type="button" (click)="filterItemsByPrice()" data-inline="true" value="Filter">
+  </div>
+</form>
+  <hr>
 
-        <app-menu-group-tree></app-menu-group-tree>
+  <app-menu-group-tree></app-menu-group-tree>
 
 </div>

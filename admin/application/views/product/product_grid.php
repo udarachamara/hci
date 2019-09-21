@@ -28,7 +28,7 @@
                         <td><?php echo $data['STATUS']; ?></td>
                         <td>
 							<div>
-								<img src="" width="100" />
+								<img src="<?php echo base_url('').$data['IMG'] ?>" width="100" />
 							</div>
 						</td>
                         <td>

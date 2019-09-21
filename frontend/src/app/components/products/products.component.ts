@@ -63,13 +63,12 @@ export class ProductsComponent implements OnInit {
 
   onSearch(event) {
     const searchData: any = {
-      Name: event,
-      PriceFrom: 0,
-      PriceTo: 0
+      Name: event.name,
+      PriceFrom: event.priceFrom,
+      PriceTo: event.priceTo
     };
     this.productService.getActiveProductsBySearch(searchData).subscribe( res => {
       this.Products = [];
-      console.log(res);
       res.forEach( element => {
         let el: Product = {
           Id: element.Id,

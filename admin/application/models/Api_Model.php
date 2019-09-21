@@ -34,7 +34,7 @@ class Api_Model extends CI_Model{
 	}
 
 	function get_active_products_by_search($name,$priceFrom,$priceTo){
-		$this->db->select('items.ID as Id , items.NAME as Name, subcategories.NAME as SubCategory , items.IMG as Image , items.STATUS as Status , items.CREATE_AT as CreateAt , items.MODIFIED_AT as ModifiedAt');
+		$this->db->select('items.ID as Id , items.NAME as Name, items.PRICE as Price , subcategories.NAME as SubCategory , items.IMG as Image , items.STATUS as Status , items.CREATE_AT as CreateAt , items.MODIFIED_AT as ModifiedAt');
 		$this->db->from('items');
 		$this->db->join('subcategories','items.SUBCATEGORY=subcategories.ID');
 		if($name != '')

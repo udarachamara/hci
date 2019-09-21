@@ -73,5 +73,6 @@ hr.style-one {
 
 .user-control{
   font-size: 12px;
+  width: inherit !important;
 }
 

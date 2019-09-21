@@ -9,7 +9,7 @@ class Product_Model extends CI_Model{
 
 	
     function get_all_products(){
-        $this->db->select('*');
+        $this->db->select('items.ID as ID , items.NAME as NAME , items.STATUS as STATUS , items.IMG as IMG , subcategories.NAME as SUBCATEGORY');
         $this->db->from('items');
         $this->db->join('subcategories' , 'subcategories.ID=items.SUBCATEGORY');
         $this->db->where('items.STATUS','active');

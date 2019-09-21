@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RequestInterceptor } from './shared/request-interceptor';
 import { HttpClient, HttpBackend, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -55,6 +55,8 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpModule,
     HttpClientModule,
     TranslateModule.forRoot(
