@@ -35,7 +35,15 @@ class Route extends CI_Controller {
         $data['grid_data'] = $this->Category_Model->get_all_categories();
         $this->load->view('category_page',$data);
 	}
-	
+    
+    
+    public function subCategory_all(){
+        $this->load->model('Category_Model');
+        $data['title'] = 'SubCategory';
+        $data['grid_data'] = $this->Category_Model->get_all_subcategories();
+        $data['category'] = $this->Category_Model->get_all_categories();
+        $this->load->view('subCategory_page',$data);
+    }
 	
 
 }

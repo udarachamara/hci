@@ -16,9 +16,10 @@ class Category_Model extends CI_Model{
 	}
 
 	function get_all_subcategories(){
-		$this->db->select('*');
+		$this->db->select('subcategories.ID as ID, subcategories.NAME as NAME, categories.NAME as CATEGORY, subcategories.STATUS as STATUS');
 		$this->db->from('subcategories');
-		$this->db->where('STATUS','active');
+		$this->db->join('categories','categories.ID=subcategories.CATEGORY');
+		$this->db->where('subcategories.STATUS','active');
 		return $this->db->get()->result_array();
 	}
 	
@@ -46,4 +47,8 @@ class Category_Model extends CI_Model{
         	$this->db->where('ID',$id);
 	  return $this->db->update('categories',$category);
 	}
+
+	function insert_new_subCategory($subCategory){
+		return $this->db->insert('subcategories',$subCategory);
+	 }
 }

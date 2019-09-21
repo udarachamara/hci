@@ -80,6 +80,7 @@
             <h6 class="collapse-header">Settings</h6>
             <a class="collapse-item" href="product-all">Product</a>
             <a class="collapse-item" href="category-all">Category</a>
+            <a class="collapse-item" href="subCategory-all">SubCategory</a>
           </div>
         </div>
       </li>
