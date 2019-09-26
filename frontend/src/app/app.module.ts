@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
+import {ReactiveFormsModule, FormGroup, FormsModule} from '@angular/forms';
+
 
 import { HttpModule } from '@angular/http';
 import { RequestInterceptor } from './shared/request-interceptor';
@@ -23,6 +25,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { MenuGroupTreeComponent } from './sections/menu-group-tree/menu-group-tree.component';
 import { TextSpeechService } from './services/text-speech.service';
+import { from } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -51,12 +54,19 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     PaymentComponent,
     MyProfileComponent,
     MenuGroupTreeComponent,
+    
+    
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule, 
+   
+
     TranslateModule.forRoot(
       {
         loader: {
