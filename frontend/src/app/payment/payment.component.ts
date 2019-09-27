@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-payment',
@@ -21,7 +22,10 @@ export class PaymentComponent implements OnInit {
       address: ['', Validators.required],
       contact: ['', Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/),Validators.maxLength(10)],
       country: ['',[ Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
-      zip: ['',[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
+      zip: ['',[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+      cname: ['',Validators.required],
+      cno: ['',[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+      cvv: ['',[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
     });
       
   }
@@ -36,6 +40,13 @@ export class PaymentComponent implements OnInit {
     }
 
     // display form values on success
+    Swal.fire(
+      'Good job!',
+      'Your Address has been Saved',
+      'success'
+      
+    )
+   
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
 }
 

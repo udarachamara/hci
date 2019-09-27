@@ -20,6 +20,24 @@
     -ms-flex: 50%; /* IE10 */
     flex: 75%;
   }
+  .summary-delivery {
+    padding-bottom: 3rem;
+  }
+  .summary-delivery-selection {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    display: block;
+    font-size: 0.625rem;
+    height: 30px;
+    width: 50%;
+  }
+  h1 {
+    font-size: 1.00rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+  }
   
   .col-25,
   .col-50,
