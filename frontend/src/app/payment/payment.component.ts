@@ -19,7 +19,9 @@ export class PaymentComponent implements OnInit {
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
-      contact: ['', Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(10)]
+      contact: ['', Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/),Validators.maxLength(10)],
+      country: ['',[ Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      zip: ['',[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
     });
       
   }
