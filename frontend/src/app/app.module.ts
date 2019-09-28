@@ -23,6 +23,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { MenuGroupTreeComponent } from './sections/menu-group-tree/menu-group-tree.component';
 import { TextSpeechService } from './services/text-speech.service';
+import { AuthService } from './services/auth.service';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -76,6 +77,7 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
       useClass: RequestInterceptor,
       multi: true,
     },
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

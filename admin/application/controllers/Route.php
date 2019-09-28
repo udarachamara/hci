@@ -23,9 +23,11 @@ class Route extends CI_Controller {
 
 
     public function product_all(){
-        $this->load->model('Product_Model');
+		$this->load->model('Product_Model');
+		$this->load->model('Category_Model');
         $data['title'] = 'Product';
-        $data['grid_data'] = $this->Product_Model->get_all_products();
+		$data['grid_data'] = $this->Product_Model->get_all_products();
+		$data['categories'] = $this->Category_Model->get_all_subcategories();
         $this->load->view('product_page',$data);
 	}
 

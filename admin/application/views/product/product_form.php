@@ -50,23 +50,19 @@
 							</div>
 							</div>
 
-							<div class="col-md-6">
-							<div class="form-group">
-								 <label class="col-sm-6">Category</label>
-									<div class="col-sm-8">
-									<select class="form-control" id="product_category">
-										<option value="active">Active</option>
-									</select>
-								  </div>
-							</div>
-							</div>
 
 							<div class="col-md-6">
 							<div class="form-group">
 								 <label class="col-sm-6">Subcategory</label>
 									<div class="col-sm-8">
 									<select class="form-control" id="product_subcategory">
-										<option value="active">Active</option>
+										<option value="">Select cat</option>
+										<?php 
+											foreach ($categories as $key) { ?>
+												<option value="<?php echo $key['ID']; ?>"><?php echo $key['NAME']; ?></option>
+											<?php }
+										
+										?>
 									</select>
 								  </div>
 							</div>

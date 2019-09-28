@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
+  public cart: Array<any> = [];
   constructor(private http: HttpClient) {}
 
   login(userName: string, password: string, key?: string) {
@@ -13,6 +12,14 @@ export class AuthService {
       name: userName,
       password,
     });
+  }
+
+  getCart(): any{
+    return this.cart;
+  }
+
+  addToCart(product){
+    this.cart.push(product);
   }
 
   get token(): string {

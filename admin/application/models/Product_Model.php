@@ -33,6 +33,21 @@ class Product_Model extends CI_Model{
 	}
 	
 	function insert_item($item){
+	// $Product_Name=$this->input->post('product_name');
+        // $Price=$this->input->post('price');
+        // $Description=$this->input->post('description');
+        // $Sub_Category=$this->input->post('product_subcategory');
+        // $Status=$this->input->post('product_status');
+        // $Image=$this->input->post('image');
+        // $item = array(
+        //         'NAME'=>$Product_Name,
+        //         'PRICE'=>$Price,
+        //         'DESCRIPTION'=>$Description,
+        //         'SUBCATEGORY'=>$Sub_Category,
+        //         'STATUS'=>$Status,
+        //         'IMG'=>$Image
+        //         );
+        
 	   return $this->db->insert('items',$item);
 	}
 	

@@ -1,21 +1,21 @@
-<div class="container">
+<div class="container" *ngIf="product">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-4">
 
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="../../../assets/images/products/{{products[0].image[0].path}}" /></div>
-						  <div class="tab-pane" id="pic-2"><img src="../../../assets/images/products/{{products[0].image[1].path}}" /></div>
+						  <div class="tab-pane active" id="pic-1"><img src="{{ baseUrl+'/'+product[0].Image }}" /></div>
+						  <div class="tab-pane" id="pic-2"><img src="{{ baseUrl+'/'+product[0].Image }}" /></div>
 						</div>
 						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="../../../assets/images/products/{{products[0].image[0].path}}" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="../../../assets/images/products/{{products[0].image[1].path}" /></a></li>
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ baseUrl+'/'+product[0].Image }}" /></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="{{ baseUrl+'/'+product[0].Image }}" /></a></li>
 						</ul>
 
 					</div>
 					<div class="details col-md-8">
-						<h3 class="product-title">Electric Toy Car</h3>
+						<h3 class="product-title">{{ product[0].Name }}</h3>
 						<!-- <div class="rating">
 							<div class="stars">
 								<span class="fa fa-star checked"></span>
@@ -26,13 +26,8 @@
 							</div>
 							<span class="review-no">41 reviews</span>
 						</div> -->
-						<p class="product-description"> Batteri : 24V/12Ah (12V x 2). Forseglet blybatteri. Lades fra 230Vac 10A strømuttak.
-							<br>- FM-radio med autosearch og MP3-spiller inngang.
-							<br>- Syntetiske-hjul med Red Line Nitrile traction-bånd.
-							<br>- Bøtteseter med ordentelige sikkerhetsseler.
-							<br>- Laste-evne : 75 kg.
-							<br>- Total-vekt ink. Batterier : ca. 35 kg.</p>
-						<h4 class="price">current price: <span>$180</span></h4>
+						<p class="product-description">{{ product[0].Description }}</p>
+						<h4 class="price">current price: <span>${{ product[0].Price }}</span></h4>
 						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 						<!-- <h5 class="sizes">sizes:
 							<span class="size" data-toggle="tooltip" title="small">s</span>
@@ -46,7 +41,7 @@
 							<span class="color blue"></span>
 						</h5> -->
 						<div class="action">
-							<button class="add-to-cart btn btn-default" routerLink="/cart" type="button">Add to Cart</button>
+							<button class="add-to-cart btn btn-default" (click)="addToCart(product[0])" type="button">Add to Cart</button>
 						</div>
 					</div>
 				</div>

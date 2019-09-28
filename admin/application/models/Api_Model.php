@@ -48,7 +48,7 @@ class Api_Model extends CI_Model{
 	}
 
 	function get_active_product_by_id($id){
-		$this->db->select('items.ID as Id , items.NAME as Name, subcategories.NAME as SubCategory , items.IMG as Image , items.STATUS as Status , items.CREATE_AT as CreateAt , items.MODIFIED_AT as ModifiedAt');
+		$this->db->select('items.ID as Id , items.NAME as Name,items.PRICE as Price,items.DESCRIPTION as Description, subcategories.NAME as SubCategory , items.IMG as Image , items.STATUS as Status , items.CREATE_AT as CreateAt , items.MODIFIED_AT as ModifiedAt');
 		$this->db->from('items');
 		$this->db->join('subcategories','items.SUBCATEGORY=subcategories.ID');
 		if($id != 0)

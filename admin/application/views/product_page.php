@@ -42,7 +42,7 @@ if(!$this->session->userdata('login_user')){
     }
   </style>
 
-  <?php $this->load->view('product/product_form'); ?>
+  <?php $this->load->view('product/product_form',$categories); ?>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -117,6 +117,54 @@ if(!$this->session->userdata('login_user')){
 	function openForm(isEdit){
 		$('#productForm').modal();
 	}
+
+	function validateForm(){
+		var product_name = $('#product_name').val();
+		var description = $('#description').val();
+		var product_subcategory = $('#product_subcategory').val();
+		var product_status = $('#product_status').val();
+		var image = $('#image').val();
+		try{
+			var image = $('#image')[0].files[0];
+		}catch(e){
+			var image = '';
+		}
+		
+
+		var formdata = new FormData();
+		formdata.append('NAME',product_name);
+		formdata.append('STATUS',product_status);
+		formdata.append('IMG',image);
+		formdata.append('DESCRIPTION',description);
+		formdata.append('SUBCATEGORY',product_subcategory);
+
+		if(product_name == ''){
+			return false;
+		}else{
+			$.ajax({
+				url:'insert-new-product',
+				type:'post',
+				dataType:'json',
+				contentType: false,
+    		processData: false,
+				data:formdata,
+				success:function(response){
+					console.log(response);
+					if(response.code==1000){
+						showSuccessMsg("Data Insert Success...!");
+						//$('#party_form').reset();
+					}else{
+						showErrorMsg("Data Insert Faield..!");
+					}
+				},
+				error:function(error){
+					showErrorMsg("Data Insert Faield..!");
+					console.log(error.responseText);
+				}
+			});
+		}
+	}
+
 </script>
 
 

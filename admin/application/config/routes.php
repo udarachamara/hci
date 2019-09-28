@@ -62,7 +62,7 @@ $route['category-all'] = 'route/category_all';
 $route['subCategory-all']='route/subCategory_all';
 
 $route['insert-new-category'] = 'category/insert_new_category';
-$route['insert-new-product'] = 'category/insert_new_product';
+$route['insert-new-product'] = 'product/insert_new_product';
 
 $route['insert-new-subCategory']='subCategory/insert_new_subCategory';
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,6 +14,8 @@ export class ProductDetailComponent implements OnInit {
 public id : number;
 public id1;
 public id2;
+public product;
+public baseUrl = environment.BASE_URL;
 
   public products = [
     {
@@ -29,26 +34,33 @@ public id2;
     }
 ];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private productService: ProductService,
+    private authService: AuthService,
+    private route: ActivatedRoute,
+  private router: Router,) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
        this.id = params['id'];
-       if(this.id == 1){
-         this.id1 = '1';
-         this.id2 = '2';
-       }else if(this.id == 2){
-         this.id1 = '3';
-         this.id2 = '4';
-       }else if(this.id == 3){
-         this.id1 = '5';
-         this.id2 = '6';
-       }else if(this.id == 4){
-         this.id1 = '7';
-         this.id2 = '8';
+       if(this.id){
+         this.productService.getProductById(this.id).subscribe(res=>{
+           console.log(res);
+           this.product = res;
+
+         });
        }
     });
 
+
+
+  }
+
+  addToCart(product){
+
+    this.authService.addToCart(product);
+    let s = this.authService.getCart;
+    this.router.navigateByUrl('/cart');
 
 
   }
