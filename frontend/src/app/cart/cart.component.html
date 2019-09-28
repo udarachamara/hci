@@ -12,7 +12,7 @@
     <div class="basket">
         <div class="basket-module">
           <div class="form-group col-50  " [formGroup]="promo" >
-            <label for="promocode"><i class="fa fa-flag"></i>Promo Code</label>
+            <label for="promocode"><i class="fa fa-flag"></i>Enter a Promotional Code</label>
             <input type="text" formControlName="promocode"  class="promo-code-field " [ngClass]="{ 'is-invalid': submitted && f.promocode.errors }" />
             <div *ngIf="submitted && f.promocode.errors" class="invalid-feedback">
                 <div *ngIf="f.promocode.errors.required">promo code required</div>
