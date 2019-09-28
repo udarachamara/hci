@@ -1,154 +1,172 @@
 <div class="container mt-2 mb-2">
-    <div class="row">
-        <div class="col-50">
-          <div class="container">
-            <form action="/action_page.php">
+  <div class="row">
+    <div class="col-50">
+      <div class="container">
 
-              
-              <form [formGroup]="registerForm " (ngSubmit)="onSubmit()"></form>
-              <div class="row">
-                <div class="col-50">
-                  <h3>Billing Address</h3>
-                  <div class="form-group col-75" [formGroup]="registerForm" >
-                    <label for="fullName"><i class="fa fa-user"></i> Full Name</label>
-                    <input type="text" formControlName="fullName"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
-                    <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
-                        <div *ngIf="f.fullName.errors.required">Full Name is required</div>
-                    </div>
+
+          <form [formGroup]="registerForm " (ngSubmit)="onSubmit()"></form>
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Billing Address</h3>
+              <div class="form-group col-75" [formGroup]="registerForm">
+                <label for="fullName"><i class="fa fa-user" ></i> Full Name</label>
+                <input type="text" formControlName="fullName" class="form-control" placeholder="Aathif Imthiyaz"
+                  [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+                <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                  <div *ngIf="f.fullName.errors.required">Full Name required</div>
                 </div>
-
-                <div class="form-group col-75" [formGroup]="registerForm"> 
-                  <label for="email"><i class="fa fa-envelope"></i> E-Mail</label>
-                  <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                      <div *ngIf="f.email.errors.required">Email is required</div>
-                      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                  </div>
               </div>
 
-              <div class="form-group col-75 " [formGroup]="registerForm" >
-                <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
-                <input type="text" formControlName="address"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
-                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                    <div *ngIf="f.address.errors.required">Address required</div>
+              <div class="form-group col-75" [formGroup]="registerForm">
+                <label for="email"><i class="fa fa-envelope"></i> E-Mail</label>
+                <input type="text" formControlName="email" class="form-control" placeholder="Aathif@gmail.com"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                 </div>
-            </div>
+              </div>
 
-            <div class="form-group col-75 " [formGroup]="registerForm" >
-              <label for="contact"><i class="fa fa-phone" placeholder="0777123456"></i> Contact</label>
-              <input type="number" formControlName="contact"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" />
-              <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
-                  <div *ngIf="f.contact.errors.required">Contact Number required</div>
+              <div class="form-group col-75 " [formGroup]="registerForm">
+                <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" formControlName="address" class="form-control" placeholder="Kandy,SriLanka"
+                  [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                  <div *ngIf="f.address.errors.required">Address required</div>
+                </div>
+              </div>
+
+              <div class="form-group col-75 " [formGroup]="registerForm">
+                <label for="contact"><i class="fa fa-phone" ></i> Contact</label>
+                <input type="number" formControlName="contact" class="form-control" placeholder="0777123456"
+                  [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" />
+                <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
+                  <div *ngIf="f.contact.errors.required">Contact Number required, Only numericals allowed</div>
                   <div *ngIf="f.contact.errors.pattern">Only Numbers</div>
                   <div *ngIf="f.contact.errors.maxLength">Contact d</div>
-             
+
+                </div>
               </div>
-          </div>
 
-          <div class="form-group col-75 " [formGroup]="registerForm" >
-            <label for="country"><i class="fa fa-flag"></i> Country</label>
-            <input type="text" formControlName="country"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
-            <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                <div *ngIf="f.country.errors.required">Country Required</div>
-                <div *ngIf="f.country.errors.pattern">Cannot contain numericals </div>
+              <div class="form-group col-75 " [formGroup]="registerForm">
+                <label for="country"><i class="fa fa-flag"></i> Country</label>
+                <input type="text" formControlName="country" class="form-control" placeholder="SriLanka"
+                  [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                  <div *ngIf="f.country.errors.required">Country Required</div>
+                  <div *ngIf="f.country.errors.pattern">Cannot contain numericals </div>
+                </div>
+              </div>
+
+              <div class="form-group col-75 " [formGroup]="registerForm">
+                <label for="zip"><i class="fa fa-flag"></i> Zip Code</label>
+                <input type="text" formControlName="zip" class="form-control" placeholder="205221"
+                  [ngClass]="{ 'is-invalid': submitted && f.zip.errors }" />
+                <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
+                  <div *ngIf="f.zip.errors.required">ZipCode required</div>
+                  <div *ngIf="f.zip.errors.pattern">Cannot contain Letters</div>
+
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-primary mr-1" (click)="onSubmit()">Place Order</button>
+              </div>
+              </div>
+
+
+
+                <div class="col-md-6 mt-3 mb-3">
+
+                      <div id="elmnt">
+
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+
+                          <i class="fa fa-cc-visa" style="color:navy;"></i>
+                          <input type="radio" name="gender" value="male" checked> VISA
+                          <br>
+                          <i class="fa fa-cc-amex" style="color:blue;"></i>
+                          <input type="radio" name="gender" value="male" checked> AMEX
+                          <br>
+                          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                          <input type="radio" name="gender" value="male" checked> MasterCard
+
+                        </div>
+
+                        <div class="form-group col-50" [formGroup]="registerForm">
+                          <label for="cname"> Name on Card</label>
+                          <input type="text" formControlName="cname" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cname.errors }" />
+                          <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Card Name required</div>
+
+                          </div>
+                        </div>
+
+
+                        <div class="form-group col-50 " [formGroup]="registerForm">
+
+                          <label for="cno" placeholder="1111-2222-3333-4444"> Card Number</label>
+                          <input type="text" formControlName="zip" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cno.errors }" />
+                          <div *ngIf="submitted && f.cno.errors" class="invalid-feedback">
+                            <div *ngIf="f.cno.errors.required">Card Number required</div>
+                            <div *ngIf="f.cno.errors.pattern">Cannot contain Letters</div>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-50 " [formGroup]="registerForm">
+                          <label for="cvv" placeholder="123"> CVV Number</label>
+                          <input type="text" formControlName="cvv" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" />
+                          <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+                            <div *ngIf="f.cvv.errors.required">Card Verification Value required</div>
+                            <div *ngIf="f.cvv.errors.pattern">Cannot contain Letters</div>
+                          </div>
+                        </div>
+                        <h1>* Card Expiration Month </h1>
+                        <div class="summary-delivery">
+                          <select name="delivery-collection" class="summary-delivery-selection">
+                            <option value="0" selected="selected">Select EXP Month</option>
+                            <option value="collection">January</option>
+                            <option value="first-class">February</option>
+                            <option value="second-class">March</option>
+                            <option value="second-class">April</option>
+                            <option value="second-class">June</option>
+                            <option value="second-class">July</option>
+                            <option value="second-class">August</option>
+                            <option value="second-class">September</option>
+                            <option value="second-class">October</option>
+                            <option value="second-class">November</option>
+                            <option value="second-class">December</option>
+
+                          </select>
+                        </div>
+
+
+                        <h1>* Card Expiration Year </h1>
+                        <div class="summary-delivery">
+                          <select name="delivery-collection" class="summary-delivery-selection">
+                            <option value="0" selected="selected">Select EXP Year</option>
+                            <option value="collection">2020</option>
+                            <option value="first-class">2021</option>
+                            <option value="second-class">2022</option>
+                            <option value="second-class">2023</option>
+                            <option value="second-class">2024</option>
+                            <option value="second-class">2025</option>
+                            <option value="second-class">2026</option>
+                            <option value="second-class">2027</option>
+                            <option value="second-class">2028</option>
+                            <option value="second-class">2029</option>
+                            <option value="second-class">2030</option>
+
+                          </select>
+                        </div>
+                      </div>
+
+                </div>
+
+              </div>
             </div>
-        </div>
-
-        <div class="form-group col-75 " [formGroup]="registerForm" >
-          <label for="zip"><i class="fa fa-flag"></i> Zip Code</label>
-          <input type="text" formControlName="zip"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zip.errors }" />
-          <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
-              <div *ngIf="f.zip.errors.required">ZipCode required</div>
-              <div *ngIf="f.zip.errors.pattern">Cannot contain Letters</div>
-          </div>
-      </div>
-
-
-
-      <div class="col-50">
-        <h3>Payment</h3>
-        <label for="fname">Accepted Cards</label>
-        <div class="icon-container">
-            
-          <i class="fa fa-cc-visa"  style="color:navy;"  ></i>
-          <input type="radio" name="gender" value="male" checked> VISA
-          <br>
-          <i class="fa fa-cc-amex" style="color:blue;"></i>
-          <input type="radio" name="gender" value="male" checked> AMEX
-          <br>
-          <i class="fa fa-cc-mastercard" style="color:red;"></i>
-          <input type="radio" name="gender" value="male" checked> MasterCard
-          
-        </div>
-
-        <div class="form-group col-50" [formGroup]="registerForm"> 
-          <label for="cname"> Name on Card</label>
-          <input type="text" formControlName="cname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cname.errors }" />
-          <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Card Name required</div>
-              
-          </div>
-      </div>
-
-      
-      <div class="form-group col-50 " [formGroup]="registerForm" >
-          <label for="cno"  placeholder="1111-2222-3333-4444"> Card Number</label>
-          <input type="text" formControlName="zip"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cno.errors }" />
-          <div *ngIf="submitted && f.cno.errors" class="invalid-feedback">
-              <div *ngIf="f.cno.errors.required">Card Number required</div>
-              <div *ngIf="f.cno.errors.pattern">Cannot contain Letters</div>
-          </div>
-      </div>
-
-      <div class="form-group col-50 " [formGroup]="registerForm" >
-        <label for="cvv"  placeholder="123"> Card Number</label>
-        <input type="text" formControlName="cvv"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" />
-        <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
-            <div *ngIf="f.cvv.errors.required">Card Verification Value required</div>
-            <div *ngIf="f.cvv.errors.pattern">Cannot contain Letters</div>
-        </div>
-    </div>
-    <h1>*  Card Expiration Month </h1>
-    <div class="summary-delivery">
-        <select name="delivery-collection" class="summary-delivery-selection">
-            <option value="0" selected="selected">Select EXP Month</option>
-           <option value="collection">January</option>
-           <option value="first-class">February</option>
-           <option value="second-class">March</option>
-           <option value="second-class">April</option>
-           <option value="second-class">June</option>
-           <option value="second-class">July</option>
-           <option value="second-class">August</option>
-           <option value="second-class">September</option>
-           <option value="second-class">October</option>
-           <option value="second-class">November</option>
-           <option value="second-class">December</option>
-           
-        </select>
-      </div>
-      
-
-        <div class="row">
-          <div class="col-50">
-            <label for="expyear">Exp Year</label>
-            <input type="text" id="expyear" name="expyear" placeholder="2018">
-          </div>
-
-           
-        </div>
-      </div>
-
-    </div>
-      
-
-      
-                
-
-                
-                  
-        <div class="text-center"  >
-          <button class="btn btn-primary mr-1" (click)="onSubmit()">Place Order</button>
-          <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
-      </div>
-
-        

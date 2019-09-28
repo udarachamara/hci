@@ -31,6 +31,8 @@ export class PaymentComponent implements OnInit {
   }
   get f() { return this.registerForm.controls; }
   onSubmit() {
+    
+
     this.submitted = true;
 
     // stop here if form is invalid
@@ -42,7 +44,7 @@ export class PaymentComponent implements OnInit {
     // display form values on success
     Swal.fire(
       'Good job!',
-      'Your Address has been Saved',
+      'Your Address and Card details has been Saved',
       'success'
       
     )
