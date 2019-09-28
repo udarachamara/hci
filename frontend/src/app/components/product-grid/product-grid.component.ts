@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment';
+import { TextSpeechService } from 'src/app/services/text-speech.service';
 
 @Component({
   selector: 'app-product-grid',
@@ -11,12 +12,13 @@ export class ProductGridComponent implements OnInit {
 
   public TopCategory: Category[] = [];
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,
+              private textSpeechService: TextSpeechService) { }
 
   ngOnInit() {
     this.categoryService.getTopCategoryList().subscribe(res => {
       res.forEach(element => {
-        let el: Category = {
+        const el: Category = {
           Id: element.Id,
           Name: element.Name,
           Image: environment.BASE_URL + '/' + element.Image,
@@ -27,8 +29,14 @@ export class ProductGridComponent implements OnInit {
         this.TopCategory.push(el);
       });
 
-      console.log(this.TopCategory);
     });
+  }
+
+
+
+  readLinkDescription(value) {
+    const Speech = 'Click here to go view ' + value;
+    this.textSpeechService.initializeSpeach(Speech);
   }
 
 }

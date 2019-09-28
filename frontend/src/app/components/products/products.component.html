@@ -13,14 +13,14 @@
                 <div class="col-md-3 col-sm-6" *ngFor="let product of Products">
                     <div class="product-grid2">
                         <div class="product-image2">
-                            <a routerLink="product-details/{{ product.Id }}">
+                            <a routerLink="product-details/{{ product.Id }}" (mouseenter)="readLinkDescription(' product information of '+product.Name)">
                                 <img class="pic-1" src="{{ product.Image }}">
                                 <img class="pic-2" src="{{ product.Image }}">
                             </a>
                             <ul class="social">
-                                <li><a routerLink="product-details/{{ product.Id }}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                <li><a  routerLink="product-details/{{ product.Id }}" (mouseenter)="readLinkDescription(' product information of '+product.Name)" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                 <!-- <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li> -->
-                                <li><a routerLink="../../cart" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a routerLink="../../cart" (mouseenter)="readLinkDescription1(' add cart to the '+product.Name)" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="product-content">

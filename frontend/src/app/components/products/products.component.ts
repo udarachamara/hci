@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { environment } from 'src/environments/environment';
+import { TextSpeechService } from 'src/app/services/text-speech.service';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private textSpeechService: TextSpeechService
   ) { }
 
   ngOnInit() {
@@ -84,5 +86,17 @@ export class ProductsComponent implements OnInit {
       });
     });
   }
+
+  readLinkDescription(value) {
+    const Speech = 'Click here to go view ' + value;
+    this.textSpeechService.initializeSpeach(Speech);
+  }
+
+  readLinkDescription1(value) {
+    const Speech = 'Click here to ' + value;
+    this.textSpeechService.initializeSpeach(Speech);
+  }
+
+
 
 }

@@ -55,7 +55,16 @@ const routes: Routes = [
   {
     path: 'cart/payment',
     component: PaymentComponent
-  }
+  },
+  // {
+  //   path: 'settings',
+  //   children: [
+  //     {
+  //       path: 'theme-setting',
+  //       component:
+  //     }
+  //   ]
+  // }
 
 ];
 

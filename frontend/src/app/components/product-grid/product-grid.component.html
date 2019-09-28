@@ -5,7 +5,7 @@
             <div class="col-md-3 col-sm-6" *ngFor="let topCategory of TopCategory">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a routerLink="products-category/{{ topCategory.Name }}">
+                        <a routerLink="products-category/{{ topCategory.Name }}" (mouseenter)="readLinkDescription(topCategory.Name)">
                             <img class="pic-1" src="{{ topCategory.Image }}">
                             <img class="pic-2" src="{{ topCategory.Image }}">
                         </a>
@@ -55,7 +55,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a routerLink="products-detail/1">
+                        <a routerLink="products-detail/1" (mouseenter)="readLinkDescription(' product information of Mercedes Benz SUV G55 AMG')">
                             <img class="pic-1" src="../../../assets/images/products/toys/download.jpg">
                             <img class="pic-2" src="../../../assets/images/products/toys/download.jpg">
                         </a>
@@ -66,7 +66,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a routerLink="products-detail/1">
+                        <a routerLink="products-detail/1" (mouseenter)="readLinkDescription(' product information of Drone MA Hoverbike 3')">
                             <img class="pic-1" src="../../../assets/images/products/electric items/images.jpg">
                             <img class="pic-2" src="../../../assets/images/products/electric items/images.jpg">
                         </a>
@@ -77,7 +77,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a routerLink="products-detail/1">
+                        <a routerLink="products-detail/1" (mouseenter)="readLinkDescription(' product information of Adidas Bazooka Football')">
                             <img class="pic-1" src="../../../assets/images/products/sports/download (1).jpg">
                             <img class="pic-2" src="../../../assets/images/products/sports/download (1).jpg">
                         </a>
@@ -88,7 +88,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a routerLink="products-detail/1">
+                        <a routerLink="products-detail/1" (mouseenter)="readLinkDescription(' product information of Mini Cooper Countryman')">
                             <img class="pic-1" src="../../../assets/images/products/vehicles/download.jpg">
                             <img class="pic-2" src="../../../assets/images/products/vehicles/download.jpg">
                         </a>
