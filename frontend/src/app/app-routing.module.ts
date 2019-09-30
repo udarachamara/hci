@@ -32,6 +32,10 @@ const routes: Routes = [
     component: ProductDetailComponent
   },
   {
+    path: 'products-search/:search',
+    component: ProductsComponent
+  },
+  {
     path: 'products-category/:category',
     children: [
       {

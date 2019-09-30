@@ -22,6 +22,16 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
+      if(params.get('search')){
+        this.Heading = 'All Products';
+        let search ={
+          name: params.get('search'),
+          priceFrom: 0,
+          priceTo: 0
+        }
+        this.onSearch(search);
+        return;
+      }
       if (params.get('category')) {
         this.Products = [];
         this.Heading = params.get('category').toString();

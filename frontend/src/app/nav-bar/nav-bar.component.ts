@@ -2,6 +2,9 @@ import { Speech } from 'speak-tts';
 import { Component, OnInit } from '@angular/core';
 import { TextSpeechService } from '../services/text-speech.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ProductService } from '../services/product.service';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,9 +14,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavBarComponent implements OnInit {
 
   public category: any[];
+  public Products: Array<Product> = [];
 
   constructor(
+    private router: Router,
     private translate: TranslateService,
+    private productService: ProductService,
     private textSpeechService: TextSpeechService) {
   }
 
@@ -141,5 +147,10 @@ export class NavBarComponent implements OnInit {
     this.translate.setDefaultLang(lan);
     this.translate.use(lan);
   }
+
+  searchProducts(event){
+    this.router.navigate(['products-search/'+event]);
+  }
+
 
 }

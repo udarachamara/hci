@@ -10,6 +10,10 @@ export class TextSpeechService {
   public EnableStatus = false;
 
   constructor() {
+    this.initSpeech();
+  }
+
+  initSpeech(){
     this.speech.init({
       volume: 0.5,
       lang: 'en-GB',

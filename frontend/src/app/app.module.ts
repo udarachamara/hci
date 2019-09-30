@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {ReactiveFormsModule, FormGroup, FormsModule} from '@angular/forms';
+
+
 import { HttpModule } from '@angular/http';
 import { RequestInterceptor } from './shared/request-interceptor';
 import { HttpClient, HttpBackend, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -24,6 +26,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import { MenuGroupTreeComponent } from './sections/menu-group-tree/menu-group-tree.component';
 import { TextSpeechService } from './services/text-speech.service';
 import { AuthService } from './services/auth.service';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { AccInfoComponent } from './components/acc-info/acc-info.component';
 
 @Injectable({providedIn: 'root'})
 export class HttpClientTrans extends HttpClient {
@@ -52,6 +56,9 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     PaymentComponent,
     MyProfileComponent,
     MenuGroupTreeComponent,
+    WishlistComponent,
+    AccInfoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -60,6 +67,10 @@ export function HttpLoaderFactory(httpClient: HttpClientTrans) {
     FormsModule,
     HttpModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+
+
     TranslateModule.forRoot(
       {
         loader: {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2019 at 02:43 AM
+-- Generation Time: Sep 30, 2019 at 06:12 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.1.26
 
@@ -84,7 +84,10 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`ID`, `NAME`, `IMG`, `STATUS`, `CREATE_AT`, `MODIFIED_AT`, `RANK`) VALUES
 (2, 'Electronics', 'public/images/category_logo/2019_09_16_03_09_34_images.jpg', 'active', '2019-09-16 18:40:34', '2019-09-16 18:56:09', 1),
-(3, 'Sports', 'public/images/category_logo/2019_09_16_03_09_30_download.jpg', 'active', '2019-09-16 18:48:30', '2019-09-16 18:56:12', 1);
+(3, 'Sports', 'public/images/category_logo/2019_09_16_03_09_30_download.jpg', 'active', '2019-09-16 18:48:30', '2019-09-16 18:56:12', 1),
+(4, 'Toys', 'public/images/category_logo/2019_09_21_11_09_01_images.jpg', 'active', '2019-09-21 14:49:01', '2019-09-21 14:49:44', 1),
+(5, 'Vehicles', 'public/images/category_logo/2019_09_21_11_09_19_download.jpg', 'active', '2019-09-21 14:49:19', '2019-09-21 14:49:47', 1),
+(6, 'Test', 'public/images/category_logo/2019_09_28_10_09_48_s-l225.jpg', 'active', '2019-09-28 14:10:48', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,12 +114,26 @@ CREATE TABLE `items` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(250) NOT NULL,
   `IMG` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` text,
+  `IMG_ARRAY` text,
   `SUBCATEGORY` int(11) DEFAULT NULL,
   `PRICE` decimal(10,2) DEFAULT NULL,
   `STATUS` varchar(10) NOT NULL DEFAULT 'active',
   `CREATE_AT` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `MODIFIED_AT` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`ID`, `NAME`, `IMG`, `DESCRIPTION`, `IMG_ARRAY`, `SUBCATEGORY`, `PRICE`, `STATUS`, `CREATE_AT`, `MODIFIED_AT`) VALUES
+(1, 'Car AZ12-BCX', 'public/images/product_logo/2019_09_16_03_09_34_images.jpg', NULL, 'public/images/product_logo/2019_09_16_03_09_34_images.jpg', 1, '450.00', 'active', '2019-09-19 21:20:17', '2019-09-19 21:32:50'),
+(2, 'Mini TV Game Console', 'public/images/product_logo/s-l2251.jpg', NULL, NULL, 1, '417.00', 'active', '2019-09-21 11:36:02', '2019-09-21 11:37:26'),
+(3, 'MP3 Player Game Console', 'public/images/product_logo/s-l225.jpg', NULL, NULL, 1, '230.00', 'active', '2019-09-21 11:42:09', '2019-09-21 11:42:34'),
+(4, 'Handy Fan Usb Mini Portable', 'public/images/product_logo/s-l22fgfhgfh.jpg', NULL, NULL, 1, '15.00', 'active', '2019-09-21 12:38:28', '2019-09-21 12:40:51'),
+(7, 'ookaburra Kahuna Pro Cricket Bat (2019)', 'public/images/product_logo/2019_09_28_08_09_56_s-l1600.jpg', 'Item Display Weight: 2.15 Pounds\nSize: Short Handle \nMid blade (215mm to 235mm from toe)\nRounded edge - thickness (34-38mm)\nSlight concave (2-3mm)', NULL, 2, NULL, 'active', '2019-09-28 11:51:56', NULL),
+(8, 'Test1', 'public/images/product_logo/2019_09_28_10_09_42_s-l1600.jpg', 'Test', NULL, 2, NULL, 'active', '2019-09-28 14:14:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -164,6 +181,30 @@ CREATE TABLE `subcategories` (
   `CREATE_AT` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `MODIFIED_AT` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subcategories`
+--
+
+INSERT INTO `subcategories` (`ID`, `NAME`, `CATEGORY`, `STATUS`, `CREATE_AT`, `MODIFIED_AT`) VALUES
+(1, 'Electric Touch', 2, 'active', '2019-09-19 21:19:33', '2019-09-28 10:38:54'),
+(2, 'Cricket', 3, 'active', '2019-09-21 14:46:06', NULL),
+(3, 'Teddy Bear', 4, 'active', '2019-09-28 10:33:54', NULL),
+(4, 'Car', 5, 'active', '2019-09-28 10:34:28', NULL),
+(5, 'Jeep', 5, 'active', '2019-09-28 10:34:39', NULL),
+(6, 'Rugby', 3, 'active', '2019-09-28 10:34:56', NULL),
+(7, 'Electric Kettle', 2, 'active', '2019-09-28 10:35:15', NULL),
+(8, 'Electric Iron', 2, 'active', '2019-09-28 10:35:27', NULL),
+(9, 'Barbie Doll', 4, 'active', '2019-09-28 10:35:56', NULL),
+(10, 'Remote Control Car', 4, 'active', '2019-09-28 10:36:21', NULL),
+(11, 'Electric Bike', 5, 'active', '2019-09-28 10:36:42', NULL),
+(12, 'Bicycle', 5, 'active', '2019-09-28 10:36:55', NULL),
+(13, 'Swimming', 3, 'active', '2019-09-28 10:37:07', NULL),
+(14, 'Shaving Machine', 2, 'active', '2019-09-28 10:39:50', NULL),
+(15, 'Quad Bike', 5, 'active', '2019-09-28 10:42:48', NULL),
+(16, 'Puzzel', 4, 'active', '2019-09-28 10:43:36', NULL),
+(17, 'CCTV Camera', 2, 'active', '2019-09-28 10:43:55', NULL),
+(18, 'Test', 4, 'active', '2019-09-28 14:12:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -266,7 +307,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `gateway`
@@ -278,7 +319,7 @@ ALTER TABLE `gateway`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -296,7 +337,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
